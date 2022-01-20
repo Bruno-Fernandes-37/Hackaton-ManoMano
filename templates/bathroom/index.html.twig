@@ -36,7 +36,7 @@
                                 </h2>
                                 <div id="flush-collapseOne" class="accordion-collapse collapse"
                                     aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body m-4">
+                                    <div class="accordion-body m-4 d-flex flex-row flex-wrap justify-content-around">
                                         {% for item in items %}
                                             {% for category in item.categories %}
                                                 {% if category.department == department.0 %}
@@ -67,8 +67,7 @@
                                 </h2>
                                 <div id="flush-collapseTwo" class="accordion-collapse collapse"
                                     aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body m-4">
-                                        <div class="accordion-body m-4">
+                                        <div class="accordion-body m-4 d-flex flex-row flex-wrap justify-content-around">
                                             {% for item in items %}
                                                 {% for category in item.categories %}
                                                     {% if category.department == department.1 %}
@@ -87,7 +86,6 @@
                                                 {% endfor %}
                                             {% endfor %}
                                         </div>
-                                    </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
@@ -100,8 +98,7 @@
                                 </h2>
                                 <div id="flush-collapseThree" class="accordion-collapse collapse"
                                     aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body m-4">
-                                        <div class="accordion-body m-4">
+                                        <div class="accordion-body m-4 d-flex flex-row flex-wrap justify-content-around">
                                             {% for item in items %}
                                                 {% for category in item.categories %}
                                                     {% if category.department == department.2 %}
@@ -120,7 +117,6 @@
                                                 {% endfor %}
                                             {% endfor %}
                                         </div>
-                                    </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
@@ -133,8 +129,7 @@
                                 </h2>
                                 <div id="flush-collapseFour" class="accordion-collapse collapse"
                                     aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body m-4">
-                                        <div class="accordion-body m-4">
+                                        <div class="accordion-body m-4 d-flex flex-row flex-wrap justify-content-around">
                                             {% for item in items %}
                                                 {% for category in item.categories %}
                                                     {% if category.department == department.3 %}
@@ -153,7 +148,6 @@
                                                 {% endfor %}
                                             {% endfor %}
                                         </div>
-                                    </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
@@ -166,8 +160,7 @@
                                 </h2>
                                 <div id="flush-collapseFive" class="accordion-collapse collapse"
                                     aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body m-4">
-                                        <div class="accordion-body m-4">
+                                        <div class="accordion-body m-4 d-flex flex-row flex-wrap justify-content-around">
                                             {% for item in items %}
                                                 {% for category in item.categories %}
                                                     {% if category.department == department.4 %}
@@ -186,7 +179,6 @@
                                                 {% endfor %}
                                             {% endfor %}
                                         </div>
-                                    </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
@@ -199,8 +191,7 @@
                                 </h2>
                                 <div id="flush-collapseSix" class="accordion-collapse collapse"
                                     aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body m-4">
-                                        <div class="accordion-body m-4">
+                                        <div class="accordion-body m-4 d-flex flex-row flex-wrap justify-content-around">
                                             {% for item in items %}
                                                 {% for category in item.categories %}
                                                     {% if category.department == department.5 %}
@@ -219,13 +210,12 @@
                                                 {% endfor %}
                                             {% endfor %}
                                         </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="p-4 d-flex">
-                            <button type="submit" class="btn btn-info mx-auto">Ajouter à votre panier</button>
+                        <div class="p-4 d-flex w-100">
+                            <button type="submit" class="btn btn-info mx-auto" >Ajouter au panier</button>
                         </div>
 
                         {# ==================================================================== #}
