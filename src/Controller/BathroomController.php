@@ -18,14 +18,10 @@ class BathroomController extends AbstractController
     /**
      * @Route("/bathroom", name="bathroom")
      */
-    public function index(Request $request, ProjectRepository $projectRepository, Item $item): Response
+    public function index(ProjectRepository $projectRepository): Response
     {
-        $form = $this->createForm(ItemType::class, $item);
-        $form->handleRequest($request);
-        
         return $this->renderForm('bathroom/index.html.twig', [
             'project' => $projectRepository->findByTitle('bathroom'),
-            'form' => $form,
         ]);
     }
 }
