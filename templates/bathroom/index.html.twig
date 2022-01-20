@@ -5,7 +5,7 @@
 {% block body %}
 <section>
     <h1>Votre future {{ project.title }}</h1>
-
+<form action="">
      <div class="accordion accordion-flush" id="accordionFlushExample">
         <div class="accordion-item">
             <h2 class="accordion-header" id="flush-headingOne">
@@ -17,9 +17,9 @@
             <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
                 data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
-                    {% for item in items %}
-                    {% if item.department == department.0 %}
-                    <p><a href="#">{{ item.category }}</a></p>
+                    {% for category in categories %}
+                    {% if category.department == department.0 %}
+                    <p><a href="#">{{ category.name }}</a></p>
                     {% endif %}
                     {% endfor %}
                 </div>
@@ -35,9 +35,9 @@
             <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
                 data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
-                    {% for item in items %}
-                    {% if item.department == department.1 %}
-                    <p><a href="#">{{ item.name }}</a></p>
+                    {% for category in categories %}
+                    {% if category.department == department.1 %}
+                    <p><a href="#">{{ category.name }}</a></p>
                     {% endif %}
                     {% endfor %}
                 </div>
@@ -53,9 +53,9 @@
             <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
                 data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
-                    {% for item in items %}
-                    {% if item.department == department.2 %}
-                    <p><a href="#">{{ item.name }}</a></p>
+                    {% for category in categories %}
+                    {% if category.department == department.2 %}
+                    <p><a href="#">{{ category.name }}</a></p>
                     {% endif %}
                     {% endfor %}
                 </div>
@@ -71,9 +71,9 @@
             <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
                 data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
-                    {% for item in items %}
-                    {% if item.department == department.3 %}
-                    <p><a href="#">{{ item.name }}</a></p>
+                    {% for category in categories %}
+                    {% if category.department == department.3 %}
+                    <p><a href="#">{{ category.name }}</a></p>
                     {% endif %}
                     {% endfor %}
                 </div>
@@ -89,9 +89,9 @@
             <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"
                 data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
-                    {% for item in items %}
-                    {% if item.department == department.4 %}
-                    <p><a href="#">{{ item.name }}</a></p>
+                    {% for category in categories %}
+                    {% if category.department == department.4 %}
+                    <p><a href="#">{{ category.name }}</a></p>
                     {% endif %}
                     {% endfor %}
                 </div>
@@ -107,14 +107,15 @@
             <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix"
                 data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
-                    {% for item in items %}
-                    {% if item.department == department.5 %}
-                    <p><a href="#">{{ item.name }}</a></p>
+                    {% for category in categories %}
+                    {% if category.department == department.5 %}
+                    <p><a href="#">{{ category.name }}</a></p>
                     {% endif %}
                     {% endfor %}
                 </div>
             </div>
         </div>
-    </div> #}
+    </div>
+</form>
 </section>
 {% endblock %}

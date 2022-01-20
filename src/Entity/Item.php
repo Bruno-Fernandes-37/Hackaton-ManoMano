@@ -14,15 +14,6 @@ use Doctrine\Common\Collections\ArrayCollection;
 class Item
 {
 
-    public const DEPARTMENT = [
-        'Salle de bain, WC ',
-        'Plomberie, Chauffage',
-        'Luminaire',
-        'Electricité',
-        'Revetement sol et mur',
-        'Outillage'
-    ];
-
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -46,16 +37,6 @@ class Item
     private $price;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $department;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $category;
-
-    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $picture;
@@ -65,9 +46,15 @@ class Item
      */
     private $projects;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Category::class, mappedBy="items")
+     */
+    private $categories;
+
     public function __construct()
     {
         $this->projects = new ArrayCollection();
+        $this->categories = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -111,30 +98,6 @@ class Item
         return $this;
     }
 
-    public function getDepartment(): ?string
-    {
-        return $this->department;
-    }
-
-    public function setDepartment(string $department): self
-    {
-        $this->department = $department;
-
-        return $this;
-    }
-
-    public function getCategory(): ?string
-    {
-        return $this->category;
-    }
-
-    public function setCategory(string $category): self
-    {
-        $this->category = $category;
-
-        return $this;
-    }
-
     public function getPicture(): ?string
     {
         return $this->picture;
@@ -169,6 +132,36 @@ class Item
     {
         if ($this->projects->removeElement($project)) {
             $project->removeItem($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Category[]
+     */
+    public function getCategories(): Collection
+    {
+        return $this->categories;
+    }
+
+    public function addCategory(Category $category): self
+    {
+        if (!$this->categories->contains($category)) {
+            $this->categories[] = $category;
+            $category->setItems($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCategory(Category $category): self
+    {
+        if ($this->categories->removeElement($category)) {
+            // set the owning side to null (unless already changed)
+            if ($category->getItems() === $this) {
+                $category->setItems(null);
+            }
         }
 
         return $this;
