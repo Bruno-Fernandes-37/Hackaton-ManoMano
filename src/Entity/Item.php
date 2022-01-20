@@ -2,16 +2,27 @@
 
 namespace App\Entity;
 
-use App\Repository\ItemRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Entity\Project;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ItemRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity(repositoryClass=ItemRepository::class)
  */
 class Item
 {
+
+    public const DEPARTMENT = [
+        'Salle de bain, WC ',
+        'Plomberie, Chauffage',
+        'Luminaire',
+        'Electricité',
+        'Revetement sol et mur',
+        'Outillage'
+    ];
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
