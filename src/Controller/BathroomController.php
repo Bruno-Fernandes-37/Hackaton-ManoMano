@@ -9,6 +9,7 @@ use App\Repository\CategoryRepository;
 use App\Repository\ItemRepository;
 use App\Repository\ProjectRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use phpDocumentor\Reflection\PseudoTypes\True_;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -22,16 +23,23 @@ class BathroomController extends AbstractController
     /**
      * @Route("/bathroom", name="bathroom")
      */
-    public function index(ProjectRepository $projectRepository, ItemRepository $itemRepository, CategoryRepository $categoryRepository): Response
+    public function index(EntityManagerInterface $entityManager, CategoryRepository $categoryRepository): Response
     {
-        $project = $projectRepository->findOneByTitle('Salle de bain');
-        $items = $itemRepository->findAll();
+        $project = new Project;
+        if (!empty($_POST)){
+            foreach($_POST as $name => $value){
+                $name = str_replace("_", " ", $name);
+                $check = $categoryRepository->findOneBy(['name' => $name]);
+                $check->setValid(true);
+                $entityManager->persist($check);
+                $entityManager->flush();
+            } 
+        }
         $categories = $categoryRepository->findAll();
-        return $this->renderForm('bathroom/index.html.twig', [
-            'project' => $project,
+        return $this->render('bathroom/index.html.twig', [
             'categories' => $categories,
-            'items' => $items,
             'department' => Category::DEPARTMENT,
+            'post' => $_POST,
         ]);
     }
 }
