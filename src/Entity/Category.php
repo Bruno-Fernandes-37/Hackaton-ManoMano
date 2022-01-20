@@ -16,7 +16,7 @@ class Category
         'Plomberie, Chauffage',
         'Luminaire',
         'Electricité',
-        'Revetement sol et mur',
+        'Revêtement sol et mur',
         'Outillage'
     ];
 
