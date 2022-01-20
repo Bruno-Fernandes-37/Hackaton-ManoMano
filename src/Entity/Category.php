@@ -42,6 +42,11 @@ class Category
      */
     private $department;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $valid = false;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -79,6 +84,18 @@ class Category
     public function setDepartment(?string $department): self
     {
         $this->department = $department;
+
+        return $this;
+    }
+
+    public function getValid(): ?bool
+    {
+        return $this->valid;
+    }
+
+    public function setValid(bool $valid): self
+    {
+        $this->valid = $valid;
 
         return $this;
     }
