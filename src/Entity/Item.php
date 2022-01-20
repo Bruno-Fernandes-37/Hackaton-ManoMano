@@ -56,6 +56,11 @@ class Item
      */
     private $quantity;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isSelected = false;
+
     public function __construct()
     {
         $this->projects = new ArrayCollection();
@@ -180,6 +185,18 @@ class Item
     public function setQuantity(int $quantity): self
     {
         $this->quantity = $quantity;
+
+        return $this;
+    }
+
+    public function getIsSelected(): ?bool
+    {
+        return $this->isSelected;
+    }
+
+    public function setIsSelected(bool $isSelected): self
+    {
+        $this->isSelected = $isSelected;
 
         return $this;
     }

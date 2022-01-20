@@ -15,7 +15,7 @@ class ItemFixtures extends Fixture
         $item->setName('Baignoire 160x70 CORVETTE');
         $item->setPrice(141,82);
         $item->setQuantity(rand(1,5));
-        $item->setDescription('Baignoire 160x70 CORVETTE , à encastrer de forme rectangulaire. couleur : blanc , matière: acrylique Garantie: 10ans');
+        $item->setDescription('Baignoire 160x70 CORVETTE, à encastrer de forme rectangulaire - couleur : blanc - matière : acrylique - garantie : 10 ans');
         $item->addCategory($this->getReference('category_0'));
         $item->setPicture('https://cdn.manomano.com/images/images_products/862229/T/4311571_1.jpg');
         $this->addReference('item_0' , $item);
@@ -35,7 +35,7 @@ class ItemFixtures extends Fixture
         $item->setName('baignoire RAVAK AVOCADO 150cm');
         $item->setPrice(139.80);
         $item->setQuantity(rand(1,5));
-        $item->setDescription('Baignoire acrylique garantie 10 ans.');
+        $item->setDescription('Baignoire acrylique - garantie : 10 ans.');
         $item->addCategory($this->getReference('category_0'));
         $item->setPicture('https://cdn.manomano.com/images/images_products/646923/T/32387691_1.jpg');
         $this->addReference('item_2', $item);
@@ -45,7 +45,7 @@ class ItemFixtures extends Fixture
         $item->setName('Vasque SWISS AQUATECHNOLOGIES');
         $item->setPrice(109.90);
         $item->setQuantity(rand(1,5));
-        $item->setDescription('Vasque ronde à poser hauteur 12cm diamètre 36cm finition brillant');
+        $item->setDescription('Vasque ronde à poser - hauteur : 12cm - diamètre : 36cm - finition : brillant');
         $item->addCategory($this->getReference('category_2'));
         $item->setPicture('https://cdn.manomano.com/images/images_products/5071444/T/33159713_1.jpg');
         $this->addReference('item_3', $item);
@@ -55,7 +55,7 @@ class ItemFixtures extends Fixture
         $item->setName('Lavabo en pierre de rivière ovale');
         $item->setPrice(86.39);
         $item->setQuantity(rand(1,5));
-        $item->setDescription('Lavabo ovale en pierre diamètre 45cm couleur pierre garantie 2ans ');
+        $item->setDescription('Lavabo ovale en pierre - diamètre : 45cm - couleur : pierre - garantie : 2 ans ');
         $item->addCategory($this->getReference('category_2'));
         $item->setPicture('https://cdn.manomano.com/images/images_products/272650/T/18754912_1.jpg');
         $this->addReference('item_4', $item);
@@ -65,7 +65,7 @@ class ItemFixtures extends Fixture
         $item->setName('Marteau BOUCHARD 40mm');
         $item->setPrice(63.24);
         $item->setQuantity(rand(1,5));
-        $item->setDescription('Marteau manche en bois, poids 1.5kg');
+        $item->setDescription('Marteau manche en bois - poids : 1.5kg');
         $item->addCategory($this->getReference('category_21'));
         $item->setPicture('https://cdn.manomano.com/images/images_products/149211/T/1342183_1.jpg');
         $this->addReference('item_5', $item);
@@ -95,7 +95,7 @@ class ItemFixtures extends Fixture
         $item->setName('Plafonnier LED 13w');
         $item->setPrice(16.99);
         $item->setQuantity(rand(1,5));
-        $item->setDescription('Plafonnier blanc à intensité variable. Diamètre 29cm');
+        $item->setDescription('Plafonnier blanc à intensité variable - diamètre : 29cm');
         $item->addCategory($this->getReference('category_12'));
         $item->setPicture('https://cdn.manomano.com/images/images_products/5871919/T/16358435_1.jpg');
         $this->addReference('item_8', $item);

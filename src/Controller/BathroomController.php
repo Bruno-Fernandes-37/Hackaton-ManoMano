@@ -23,23 +23,38 @@ class BathroomController extends AbstractController
     /**
      * @Route("/bathroom", name="bathroom")
      */
-    public function index(EntityManagerInterface $entityManager, CategoryRepository $categoryRepository): Response
-    {
+    public function index(
+        EntityManagerInterface $entityManager,
+        CategoryRepository $categoryRepository,
+        ItemRepository $itemRepository
+    ): Response {
         $project = new Project;
-        if (!empty($_POST)){
-            foreach($_POST as $name => $value){
+        $totalPrice = 0;
+        $totalArticles = 0;
+        $items = $itemRepository->findBy(
+            ['isSelected' => false],
+        );
+        foreach ($items as $item) {
+            $totalPrice += $item->getPrice() * $item->getQuantity();
+            $totalArticles += $item->getQuantity();
+        }
+
+        if (!empty($_POST)) {
+            foreach ($_POST as $name => $value) {
                 $name = str_replace("_", " ", $name);
                 $check = $categoryRepository->findOneBy(['name' => $name]);
                 $check->setValid(true);
                 $entityManager->persist($check);
                 $entityManager->flush();
-            } 
+            }
         }
         $categories = $categoryRepository->findAll();
         return $this->render('bathroom/index.html.twig', [
             'categories' => $categories,
             'department' => Category::DEPARTMENT,
-            'post' => $_POST,
+            'items' => $items,
+            'total' => $totalPrice,
+            'articles' => $totalArticles,
         ]);
     }
 }
