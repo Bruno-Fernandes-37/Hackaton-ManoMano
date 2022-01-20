@@ -13,6 +13,13 @@ body {
         text-align: center;
     }
 
+    h2 {
+        font-size: 3rem;
+        color: $text-secondary;
+        padding: 1em;
+        text-align: center;
+    }
+
     a {
         text-decoration: none;
         color: $text-primary;
