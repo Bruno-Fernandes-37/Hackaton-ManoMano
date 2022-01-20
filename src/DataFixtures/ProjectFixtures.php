@@ -13,9 +13,6 @@ class ProjectFixtures extends Fixture
     {
         $project = new Project();
         $project->setTitle('Salle de bain');
-        for ($i = 0 ; $i<9 ; $i++) {
-            $project->addItem($this->getReference('item_' . $i));
-        }
         $manager->persist($project);
         $manager->flush();
     }
