@@ -4,27 +4,35 @@
 
 {% block body %}
 <h1>Quel est votre projet?</h1>
-<div class="d-flex p-2 m-3 flex-column mx-auto">
-  <div class="card mx-auto m-4" style="width: 50rem">
-      <img class="card-img-top" src="{{ asset('build/images/home1.png') }}" alt="bathroom image">
-      <div class="card-body">
-        <p class="card-text text-center">Projet salle de bain</p>
-      </div>
-  </div>
 
-  <a class="card mx-auto m-4" style="width: 50rem" href="">    
+<div class="d-flex p-2 m-3 flex-column mx-auto">
+  <a class="card mx-auto m-4" style="width: 50rem" href="">
       <img class="card-img-top" src="{{ asset('build/images/home2.png') }}" alt="bathroom image">
       <div class="card-body">
         <p class="card-text text-center">Projet chambre</p>
       </div>
   </a>
 
-  <div class="card mx-auto m-4" style="width: 50rem;">
+  <a class="card mx-auto m-4" style="width: 50rem" href=" {{ path('project_bathroom') }}">    
+      <img class="card-img-top" src="{{ asset('build/images/home1.png') }}" alt="bathroom image">
+      <div class="card-body">
+        <p class="card-text text-center">Projet salle de bain</p>
+      </div>
+  </a>
+
+  <a class="card mx-auto m-4" style="width: 50rem" href="">
       <img class="card-img-top" src="{{ asset('build/images/home3.png') }}" alt="Card image cap">
       <div class="card-body">
         <p class="card-text text-center">Projet jardin</p>
       </div>
-  </div>
+  </a>
+
+  <a class="card mx-auto m-4" style="width: 50rem" href="#">
+    <img class="card-img-top" src="{{ asset('build/images/home4.png') }}" alt="Card image cap">
+    <div class="card-body">
+      <p class="card-text text-center">Projet cuisine</p>
+    </div>
+  </a>
 </div>
 
 {% endblock %}
