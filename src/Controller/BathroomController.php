@@ -32,7 +32,7 @@ class BathroomController extends AbstractController
         $totalPrice = 0;
         $totalArticles = 0;
         $items = $itemRepository->findBy(
-            ['isSelected' => false],
+            ['isSelected' => true],
         );
         foreach ($items as $item) {
             $totalPrice += $item->getPrice() * $item->getQuantity();

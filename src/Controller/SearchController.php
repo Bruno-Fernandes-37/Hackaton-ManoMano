@@ -2,10 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\Item;
 use App\Repository\ItemRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class SearchController extends AbstractController
 {
@@ -18,5 +20,17 @@ class SearchController extends AbstractController
         return $this->render('search/index.html.twig', [
             'items' => $itemRepository->findAll(),
         ]);
+    }
+    /**
+     * @Route("/search/{id}", name="additem")
+     */
+    public function addItem(int $id, ItemRepository $itemRepository, EntityManagerInterface $em): Response
+    {
+        $item = $itemRepository->findOneBy(['id' => $id]);
+        $item->setIsSelected(true);
+        $em->persist($item);
+        $em->flush();
+
+        return $this->redirectToRoute('project_bathroom');
     }
 }
