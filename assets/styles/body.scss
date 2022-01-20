@@ -1,0 +1,38 @@
+body {
+    background-color: $bg-primary;
+    font-size: 2.5rem;
+    margin: 0;
+    box-sizing: border-box;
+    color: $text-primary;
+    
+
+    h1 {
+        font-size: 4rem;
+        color: $text-primary;
+        padding: 1em;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 3rem;
+        color: $text-secondary;
+        padding: 1em;
+        text-align: center;
+    }
+
+    a {
+        text-decoration: none;
+        color: $text-primary;
+    }
+
+    p {
+        font-size: 2.5rem;
+    }
+
+    .btn {
+        font-size: 2.5rem;
+        border-radius: 0.3em;
+        width: 8em;
+        height: 2.5em;
+    }
+}

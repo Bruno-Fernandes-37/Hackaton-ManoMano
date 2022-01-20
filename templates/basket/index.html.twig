@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Panier{% endblock %}
+
+{% block body %}
+    <b>prix total : {{ total }} €</b>
+    <br>
+    <b>nombre total d'articles : {{ articles }}</b>
+    <br>
+    <br>
+    {% for item in items %}
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{ item.picture }}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{ item.name }}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">prix : <b>{{ item.price }} €</b></li>
+            <li class="list-group-item">quantité : {{ item.quantity }}</li>
+        </ul>
+    </div>
+    <br>
+{% endfor %}
+{% endblock %}
