@@ -30,6 +30,10 @@ class SearchController extends AbstractController
         $item->setIsSelected(true);
         $em->persist($item);
         $em->flush();
+        $this->addFlash(
+            'info',
+            "le produit a bien été ajouté dans votre sélection"
+        );
 
         return $this->redirectToRoute('project_bathroom');
     }
