@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello SearchController!{% endblock %}
+{% block title %}Votre recherche{% endblock %}
 
 {% block body %}
-<h1>Votre Résultat de recherche</h1>
-    {% for item in items %}
-    <div class="row">
+<h1>Votre résultat de recherche</h1>
+{% for item in items %}
+    <a class="row" href="{{ path("additem", {"id": item.id}) }}">
         <div class="col-8 mx-auto m-4">
             <div class="card mx-auto">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-6 text-right">
-                            <img class="" src="{{item.picture}}" alt="image de {{item.name}}" height = "200px" width="200px">
+                            <img class="" src="{{item.picture}}" alt="image de {{item.name}}" height="200px" width="200px">
                         </div>
                         <div class="col-6 d-flex flex-column justify-content-around ">
                             <h5 class="card-title text-secondary">{{item.name}}</h5>
@@ -21,6 +21,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    {% endfor %}
+    </a>
+{% endfor %}
 {% endblock %}
